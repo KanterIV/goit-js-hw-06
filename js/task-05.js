@@ -6,9 +6,13 @@ const refs = {
 refs.inputEl.addEventListener("input", onNameElChangeInput);
 
 function onNameElChangeInput(event) {
-  if (!event.currentTarget.value) {
-    refs.nameEl.textContent = "Anonymous";
-  } else {
-    refs.nameEl.textContent = event.currentTarget.value;
-  }
+  // !Варіант №1
+  // if (!event.currentTarget.value) {
+  //   refs.nameEl.textContent = "Anonymous";
+  // } else {
+  //   refs.nameEl.textContent = event.currentTarget.value;
+  // }
+
+  // !Варіант №2
+  refs.nameEl.textContent = event.currentTarget.value || "Anonymous";
 }
